@@ -4,7 +4,11 @@ const BuildControl = (props) => {
   return (
     <div className="BuildControlBurger">
       <div className="LabelBurger">{props.label}</div>
-      <div className="LessBurger" onClick={props.removed}>
+      <div
+        className="LessBurger"
+        onClick={props.removed}
+        disabled={props.disabled}
+      >
         Less
       </div>
       <div className="MoreBurger" onClick={props.added}>
