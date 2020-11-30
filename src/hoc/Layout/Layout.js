@@ -1,8 +1,8 @@
 import React from 'react'
-import Aux from '../../hoc/Ax'
+import Aux from '../Ax/Ax'
 import './Layout.css'
-import ToolBar from '../Navigation/Toolbar/Toolbar.js'
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer.js'
+import ToolBar from '../../components/Navigation/Toolbar/Toolbar.js'
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer.js'
 class Layout extends React.Component {
   state = {
     showSideDrawer: true,
