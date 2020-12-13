@@ -6,7 +6,7 @@ import './CheckoutSummary.css'
 const CheckoutSummary = (props) => {
   return (
     <div className="CheckoutSummary">
-      <h1>We hope it testes well!</h1>
+      <h1 style={{ textAlign: 'center' }}>We hope it testes well!</h1>
       <div style={{ width: '100%', height: '300px', margin: 'auto' }}>
         <Burger ingredients={props.ingredients} />
       </div>

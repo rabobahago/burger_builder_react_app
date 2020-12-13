@@ -22,6 +22,7 @@ class BurgerBuilder extends Component {
     loading: false,
   }
   componentDidMount() {
+    console.log(this.props)
     axios
       .get(
         'https://react-my-burger-2c36e-default-rtdb.firebaseio.com/ingredients.json',
@@ -83,32 +84,33 @@ class BurgerBuilder extends Component {
     this.setState({ purchasing: false })
   }
   purchaseContinueHandler = () => {
-    this.setState({ loading: true })
     //alert('You continue!')
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice,
-      customer: {
-        name: 'Rabo Yusuf',
-        address: {
-          street: 'kad. street',
-          zipCode: '23566',
-          country: 'Nigeria',
-        },
-        email: 'raboysgsg@gmail.com',
-      },
-      deliveryMethod: 'fastest',
-    }
-    axios
-      .post('/orders.json', order)
-      .then((response) => {
-        this.setState({ loading: false, purchasing: false })
-        //console.log(response)
-      })
-      .catch((err) => {
-        this.setState({ loading: false, purchasing: false })
-        //console.log(err)
-      })
+    // this.setState({ loading: true })
+    // const order = {
+    //   ingredients: this.state.ingredients,
+    //   price: this.state.totalPrice,
+    //   customer: {
+    //     name: 'Rabo Yusuf',
+    //     address: {
+    //       street: 'kad. street',
+    //       zipCode: '23566',
+    //       country: 'Nigeria',
+    //     },
+    //     email: 'raboysgsg@gmail.com',
+    //   },
+    //   deliveryMethod: 'fastest',
+    // }
+    // axios
+    //   .post('/orders.json', order)
+    //   .then((response) => {
+    //     this.setState({ loading: false, purchasing: false })
+    //     //console.log(response)
+    //   })
+    //   .catch((err) => {
+    //     this.setState({ loading: false, purchasing: false })
+    //     //console.log(err)
+    //   })
+    this.props.history.push('/checkout')
   }
   render() {
     const disabledInfo = {
