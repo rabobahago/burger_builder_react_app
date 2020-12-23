@@ -2,15 +2,33 @@ import React from 'react'
 import './input.css'
 const Input = (props) => {
   let inputElement = null
-  switch (props.inputType) {
+  switch (props.elementType) {
     case 'input':
-      inputElement = <input {...props} className="InputElement" />
+      inputElement = (
+        <input
+          {...props.elementConfig}
+          value={props.value}
+          className="InputElement"
+        />
+      )
       break
     case 'textarea':
-      inputElement = <textarea {...props} className="InputElement" />
+      inputElement = (
+        <textarea
+          {...props.elementConfig}
+          value={props.value}
+          className="InputElement"
+        />
+      )
       break
     default:
-      inputElement = <input {...props} className="InputElement" />
+      inputElement = (
+        <input
+          {...props.elementConfig}
+          value={props.value}
+          className="InputElement"
+        />
+      )
   }
   return (
     <div className="Input">
