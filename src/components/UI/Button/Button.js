@@ -4,6 +4,7 @@ const Button = (props) => (
   <div
     className="[Button, props.btnType].join(' ')"
     onClick={props.clicked}
+    disabled={props.disabled}
     style={{
       display: 'inline',
       marginRight: '40px',
